@@ -10,6 +10,7 @@
 
 /pc-demo/node_modules
 /pc-demo/.idea
+/pc-demo/npm-debug.log
 /pc-demo/dist
 /pc-demo/src/home/node_modules
 /pc-demo/src/common/node_modules
