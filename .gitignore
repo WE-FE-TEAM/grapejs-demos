@@ -1,0 +1,15 @@
+/.vscode
+/.idea
+/node_modules
+.DS_Store
+*.db
+*.bak
+*.tmp
+*.cmd
+~*
+
+/pc-demo/node_modules
+/pc-demo/.idea
+/pc-demo/dist
+/pc-demo/src/home/node_modules
+/pc-demo/src/common/node_modules
