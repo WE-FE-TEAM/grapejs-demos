@@ -20,6 +20,8 @@ Prepare(){
 
     weSdkDir="${projectRoot}/../we-sdk/"
 
+
+
     if [ ! -d ${nodeModulesDir} ]
     then
         echo "没有node_modules目录, 请先执行npm install"
@@ -30,6 +32,11 @@ Prepare(){
     then
         echo "没有找到we-sdk目录, 请确认"
         exit
+    fi
+
+    if [ ! -d ${distDir} ]
+    then
+        mkdir ${distDir}
     fi
 
     if [ ! -d ${distAppDir} ]
@@ -52,16 +59,16 @@ CopyNodeModules(){
 
 CopyIndex(){
     indexFile="${srcDir}/index.js"
-    babelFile="${srcDir}/.babelrc"
+#    babelFile="${srcDir}/.babelrc"
     if [ -f ${indexFile} ]
     then
         cp ${indexFile} ${distAppDir}
     fi
 
-    if [ -f ${babelFile} ]
-    then
-        cp ${babelFile} ${distAppDir}
-    fi
+#    if [ -f ${babelFile} ]
+#    then
+#        cp ${babelFile} ${distAppDir}
+#    fi
 }
 
 CopyWeSdk(){
