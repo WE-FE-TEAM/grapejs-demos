@@ -14,3 +14,6 @@
 /pc-demo/dist
 /pc-demo/src/home/node_modules
 /pc-demo/src/common/node_modules
+
+/pc-demo/src/home/output
+/pc-demo/src/common/output

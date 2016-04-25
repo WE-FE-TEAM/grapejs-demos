@@ -28,6 +28,16 @@ fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts}', {
     domain: url_prefix
 });
 
+// //模块化支持
+// fis.hook('commonjs', {
+//     paths: {
+//         react : 'common:node_modules/react/react.js',
+//         'react-dom' : 'common:node_modules/react/index.js',
+//         jquery : 'common:node_modules/jquery/dist/jquery.js'
+//     },
+//     extList: ['.js', '.es', '.ts', '.tsx', '.jsx']
+// });
+
 /**
  * 打包策略 :
  *     node_modules资源打包
@@ -43,5 +53,3 @@ fis.media('prod')
     .match('/client/widget/(**.{css,scss})', {
         packTo : '/${static}/pkg/${namespace}_wdg.css'
     });
-
-
