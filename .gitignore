@@ -8,6 +8,8 @@
 *.cmd
 ~*
 
+node_modules
+
 /pc-demo/node_modules
 /pc-demo/.idea
 /pc-demo/npm-debug.log
