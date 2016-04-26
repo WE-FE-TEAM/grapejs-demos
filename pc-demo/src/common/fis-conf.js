@@ -13,10 +13,10 @@ fis.set('namespace', 'common');
  * 静态资源url前添加前缀
  */
 let url_prefix = '/n';
-fis.match('**.{js,c' +
-    'ss,png,jpg,gif,jsx,scss,ts}', {
+fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts,eot,ttf,woff,svg}', {
     domain: url_prefix
 });
+
 
 
 /**
@@ -34,3 +34,5 @@ fis.media('prod')
     .match('/client/widget/(**.{css,scss})', {
         packTo : '/${static}/pkg/${namespace}_wdg.css'
     });
+
+
