@@ -1,0 +1,23 @@
+{
+  "name": "grape-pc-demo",
+  "version": "0.0.1",
+  "author": "wangcheng714",
+  "license": "ISC",
+  "scripts": {
+    "server:dev-win": "set NODE_ENV=development&nodemon --watch dist/app --watch dist/resource-map dist/app/index.js",
+    "server:dev": "NODE_ENV=development nodemon --watch dist/app --watch dist/resource-map dist/app/index.js",
+    "env:init": "scripty"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "console-polyfill": "^0.2.2",
+    "es5-shim": "^4.5.8",
+    "html5shiv": "^3.7.3",
+    "jquery": "^1.9.1",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8"
+  },
+  "devDependencies": {
+    "scripty": "^1.4.0"
+  }
+}

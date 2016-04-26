@@ -57,6 +57,7 @@
 
         {% block block_header %}
             {% widget "common:widget/top-header/top-header.tpl" %}
+            {% widget "common:widget/second-header/second-header.tpl" %}
         {% endblock %}
 
         <div class="main-content">
@@ -65,6 +66,10 @@
             {% endblock %}
 
         </div>
+
+        {% block block_footer %}
+
+        {% endblock %}
 
         {# 页面的JS,放在body结束的入口 #}
         {% block block_body_js %}

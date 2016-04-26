@@ -8,7 +8,7 @@
             <li class="user-item fn-clear">
                 {% if ! $request.user %}
                     <div class="user-avatar-container fn-left">
-                        <img src="/static/img/account/default-avatar-96.png?__inline"  />
+                        <img src="/client/static/img/account/default-avatar-96.png?__inline"  />
                         <div class="avatar-masking"><a href="/account/index.action"></a></div>
                     </div>
                     <div class="user-name fn-clear">
@@ -16,7 +16,7 @@
                     </div>
                 {% else %}
                     <div class="user-avatar-container fn-left">
-                        <img id="he-userAvatar" src="/static/img/account/default-avatar-96.png?__inline"  />
+                        <img id="he-userAvatar" src="/client/static/img/account/default-avatar-96.png?__inline"  />
                         <div class="avatar-masking"><a href="/account/index.action"></a></div>
                         <a href="/account/comm!mail.action" class="msgcount-icon" id="header-msgcount"></a>
                     </div>
