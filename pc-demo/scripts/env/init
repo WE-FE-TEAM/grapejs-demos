@@ -76,7 +76,7 @@ CopyWeSdk(){
 }
 
 Copy(){
-    CopyNodeModules
+#    CopyNodeModules
     CopyIndex
     CopyWeSdk
 }

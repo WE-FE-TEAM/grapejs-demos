@@ -19,6 +19,6 @@ fis.match('**', {
     })
 });
 
-fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts}', {
+fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts,eot,ttf,woff,svg}', {
     domain: url_prefix
 });

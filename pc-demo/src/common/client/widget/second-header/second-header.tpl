@@ -2,7 +2,7 @@
 <div class="wdg-second-header">
     <div class="main-section">
         <a href="/" class="brand-logo mt15">
-            <img src="/static/img/we-logo.png" alt="logo" />
+            <img src="/client/static/img/we-logo.png" alt="logo" />
         </a>
         <ul class="site-nav">
             <li class="user-item fn-clear">

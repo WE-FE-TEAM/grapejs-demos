@@ -9,7 +9,8 @@
 
 class DemoController extends weDemo.ControllerBase {
     
-    dialog1(){
+    dialog1Action(){
+        console.log('demo/dialog/dialog1');
         this.http.render('home/page/demo/dialog/dialog.tpl');
     }
 }
