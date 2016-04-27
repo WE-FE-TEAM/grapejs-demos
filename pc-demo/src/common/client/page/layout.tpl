@@ -1,4 +1,8 @@
 <!doctype html>
+{% block block_assign %}
+    {# 模板内赋值局部变量 #}
+    {% set tpl_now = Date.now() %}
+{% endblock %}
 {% html lang="en" framework="common:static/js/mod.js" %}
     {% head %}
         <meta charset="utf-8">
@@ -70,7 +74,7 @@
         </div>
 
         {% block block_footer %}
-
+            {% widget "common:widget/footer/footer.tpl" %}
         {% endblock %}
 
         {# 页面的JS,放在body结束的入口 #}

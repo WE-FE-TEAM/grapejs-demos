@@ -46,7 +46,9 @@ class App extends React.Component{
         if( this.state.dialogShowing ){
 
             let dialogProps = {
+                showing : true,
                 zIndex : 333,
+                isCloseOnMaskClick : false,
                 dialog : {
                     id : 'demo-dialog',
                     className : 'demo-dialog-1',
@@ -82,7 +84,7 @@ let singleton = {
 
     init : function(){
 
-        alert('init');
+        // alert('init');
 
         ReactDOM.render(
             <App />,

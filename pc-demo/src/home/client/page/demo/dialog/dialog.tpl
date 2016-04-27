@@ -1,17 +1,20 @@
 {% extends 'common:page/layout.tpl' %}
 
-{% block content %}
+{% block block_body %}
      <div id="app">
 
      </div>
 {% endblock %}
 
+
 {% block block_body_js %}
 
+
 {% script %}
-    require.async( ['./app.js'], function( app ){
-        app.init();
-    } );
+require(["home:page/demo/dialog/dialog.js"] , function(app){
+app.init();
+});
 {% endscript %}
+
 
 {% endblock %}

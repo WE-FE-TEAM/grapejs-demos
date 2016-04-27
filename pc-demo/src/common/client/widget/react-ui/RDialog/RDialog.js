@@ -32,9 +32,16 @@ class RDialog extends React.Component {
         this.renderPortal( newProps );
     }
 
+    componentWillUnmount(){
+        ReactDOM.unmountComponentAtNode( this.container );
+        document.body.removeChild( this.container );
+        this.container = null;
+    }
+
     renderPortal( props ){
 
-        ReactDOM.render( React.createElement( DialogPortal, props), this.container );
+        ReactDOM.render( <DialogPortal {...props} />, this.container);
+
     }
     
     render(){

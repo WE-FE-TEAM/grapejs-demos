@@ -21,9 +21,9 @@
                 <li class="fn-left">
                     <a class="gray" target="_blank" href="/about/about.action?flag=invite">招贤纳士</a>
                 </li>
-                <%--<li class="fn-left">
+                {# <li class="fn-left">
                 <a class="gray" target="_blank" href="/sitemap.action">网站地图</a>
-            </li>--%>
+            </li> #}
                 <li class="fn-left">
                     <a class="gray" target="_blank" href="/help/index.action">帮助中心</a>
                 </li>
@@ -60,7 +60,7 @@
         </div>
         <div class="ui-footer-section">
             <div class="ui-footer-copyright">
-                <span class="ui-footer-contact-link color-gray-text">© <%=currentDate.getYear()+1900 %> 人人贷 All rights reserved</span>
+                <span class="ui-footer-contact-link color-gray-text">© {{ tpl_now | date_format('YYYY') }} 人人贷 All rights reserved</span>
                 <span class="ui-footer-contact-link color-gray-text has-separator">人人贷商务顾问(北京)有限公司</span>
                 <span class="ui-footer-contact-link color-gray-text has-separator"><a class="gray" target="_blank" href="/icp/icp.html">京ICP证 100953号</a></span>
                 <span class="ui-footer-contact-link color-gray-text has-separator">京公网安备11010502020657</span>
@@ -112,7 +112,7 @@
 
 <div class="fn-hide">
     <div id="weixin-content" class="p20 text-center">
-        <img src="/static/img/weixin_l.jpg" style="width:250px" />
+        <img src="/client/static/img/weixin_l.jpg" style="width:250px" />
         <p>微信扫一扫，人人贷We理财里动态全知道！</p>
     </div>
 </div>

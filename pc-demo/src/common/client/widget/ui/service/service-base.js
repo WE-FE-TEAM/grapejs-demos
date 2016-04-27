@@ -6,7 +6,7 @@
 
 'use strict';
 
-const $ = require('jquery');
+const $ = require('common:widget/lib/jquery/jquery');
 const Promise = require('bluebird');
 
 

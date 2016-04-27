@@ -5,7 +5,7 @@
 'use strict';
 
 
-var $ = require('jquery');
+var $ = require('common:widget/lib/jquery/jquery');
 var service = require('common:widget/ui/service/service-factory.js');
 
 var userService = service.getService('user');

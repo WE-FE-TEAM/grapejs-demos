@@ -6,7 +6,7 @@ console.log("from message.js");
 var a = require('./a.js');
 a.test();
 
-var $ = require("jquery");
+var $ = require("common:widget/lib/jquery/jquery");
 
 console.log($);
 

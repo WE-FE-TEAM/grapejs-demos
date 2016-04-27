@@ -1,5 +1,6 @@
 
-@import url('/client/static/css/reset.scss?__inline');
+@import url('./reset.scss?__inline');
 @import url('./ui/font.css?__inline');
+@import url('./old/default.css?__inline');
 @import url('./ui/util.css?__inline');
-@import url('/client/static/css/layout.scss?__inline');
+@import url('./layout.scss?__inline');
