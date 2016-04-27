@@ -41,14 +41,36 @@ class DialogPortal extends React.Component{
         }
     }
 
+    componentDidUpdate(){
+        if( this.props.isAutoCenter ){
+            this.autoCenter();
+        }
+    }
+
     autoCenter(){
 
         let $win = $(window);
 
         var clientWidth = $win.width();
         var clientHeight = $win.height();
-        var dialogWidth = $( this.refs.dialog ).width();
-        var dialogHeight = $( this.refs.dialog ).height();
+
+        var dialogWidth;
+        var dialogHeight;
+
+        let dialogStyle = this.props.dialog.style || {};
+
+        if( dialogStyle.width >= 0 ){
+            dialogWidth = dialogStyle.width;
+        }else{
+            dialogWidth = $( this.refs.dialog ).width();
+        }
+
+        if( dialogStyle.height > 0 ){
+            dialogHeight = dialogStyle.height;
+        }else{
+            dialogHeight = $( this.refs.dialog ).height();
+        }
+
 
         if( clientHeight !== this.state.clientHeight
             || clientWidth !== this.state.clientWidth
@@ -111,6 +133,14 @@ class DialogPortal extends React.Component{
         if( ! dialogStyle.hasOwnProperty('zIndex') && zIndex ){
             dialogStyle['zIndex'] = zIndex + 1;
         }
+
+        if( this.props.isAutoCenter ){
+            dialogStyle.width = this.state.dialogWidth;
+            dialogStyle.height = this.state.dialogHeight;
+            dialogStyle.left = this.state.dialogLeft;
+            dialogStyle.top = this.state.dialogTop;
+        }
+
         dialogProps.style = dialogStyle;
         dialogProps.className = ( dialogProps.className || '') + ' r-dialog-wrap ';
 

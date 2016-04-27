@@ -48,6 +48,7 @@ class App extends React.Component{
             let dialogProps = {
                 showing : true,
                 zIndex : 333,
+                isAutoCenter : true,
                 isCloseOnMaskClick : false,
                 dialog : {
                     id : 'demo-dialog',

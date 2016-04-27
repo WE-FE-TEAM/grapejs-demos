@@ -58,6 +58,8 @@ RDialog.defaultProps = {
     isModal : true,
     //点击mask, 是否触发关闭弹窗动作
     isCloseOnMaskClick : false,
+    //是否自动在可视区域居中
+    isAutoCenter : false,
     zIndex : 20,
     dialog : {
         className : '',
