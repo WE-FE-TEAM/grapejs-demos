@@ -12,6 +12,8 @@ const ReactDOM = require('react-dom');
 
 const RDialog = require('common:widget/react-ui/RDialog/RDialog.js');
 
+const RWeDialog = require('common:widget/react-ui/RWeDialog/RWeDialog.js');
+
 
 class App extends React.Component{
 
@@ -19,12 +21,16 @@ class App extends React.Component{
         super(props);
 
         this.state = {
-            dialogShowing : false
+            dialogShowing : false,
+            dialogShowing2 : false
         };
 
 
         this.showDialog = this.showDialog.bind( this );
         this.hideDialog = this.hideDialog.bind( this );
+
+        this.showWeDialog = this.showWeDialog.bind( this );
+        this.hideWeDialog = this.hideWeDialog.bind( this );
     }
 
     showDialog(){
@@ -36,6 +42,18 @@ class App extends React.Component{
     hideDialog(){
         this.setState({
             dialogShowing : false
+        });
+    }
+
+    showWeDialog(){
+        this.setState({
+            dialogShowing2:true
+        });
+    }
+
+    hideWeDialog(){
+        this.setState({
+            dialogShowing2 : false
         });
     }
 
@@ -69,12 +87,29 @@ class App extends React.Component{
             </RDialog>;
         }
 
+
+        let weDialog = null;
+
+        if( this.state.dialogShowing2 ){
+            let weProps = {
+                showing : true,
+                title : '测试的title',
+                onRequestClose : this.hideWeDialog
+            };
+
+            weDialog = <RWeDialog {...weProps}>
+                <div>这里是内容</div>
+            </RWeDialog>
+        }
+
         return (
             <div>
                 <div>
                     <button onClick={ this.showDialog }>显示弹窗</button>
+                    <button onClick={ this.showWeDialog }>RWeDialog</button>
                 </div>
                 { dialog }
+                { weDialog }
             </div>
         );
     }

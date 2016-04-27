@@ -78,8 +78,8 @@ class DialogPortal extends React.Component{
             || dialogHeight !== this.state.dialogHeight
         ){
             //需要重新设置对话框的居中
-            let left = $win.scrollLeft() + ( clientWidth - dialogWidth ) / 2;
-            let top = $win.scrollTop() + ( clientHeight - dialogHeight ) / 2;
+            let left = Math.max( 0, $win.scrollLeft() + ( clientWidth - dialogWidth ) / 2 );
+            let top = Math.max( 20, $win.scrollTop() + ( clientHeight - dialogHeight ) / 2);
 
             this.setState({
                 clientWidth : clientWidth,
@@ -129,7 +129,7 @@ class DialogPortal extends React.Component{
         }
 
         let dialogProps = props.dialog || {};
-        let dialogStyle = dialogProps.style || {};
+        let dialogStyle = $.extend( {}, dialogProps.style || {} );
         if( ! dialogStyle.hasOwnProperty('zIndex') && zIndex ){
             dialogStyle['zIndex'] = zIndex + 1;
         }
