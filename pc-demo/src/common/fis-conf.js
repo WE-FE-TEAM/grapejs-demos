@@ -17,6 +17,17 @@ fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts,eot,ttf,woff,svg}', {
     domain: url_prefix
 });
 
+/**
+ * 定制 grape release发布地址
+ */
+let projectDir = path.dirname(fis.project.getProjectPath());
+let distDir = projectDir + '/../dist/';
+fis.match('**', {
+    deploy: fis.plugin('local-deliver', {
+        to: fis.get('options.d') ||  fis.get('options.dest') || distDir
+    })
+});
+
 
 
 /**

@@ -14,30 +14,27 @@ fis.set('namespace', 'home');
  * 静态资源url前添加前缀
  */
 let url_prefix = '/n';
-fis.match('**.{js,c' +
-    'ss,png,jpg,gif,jsx,scss,ts}', {
+fis.match('**.{js,css,png,jpg,gif,jsx,scss,ts,eot,ttf,woff,svg}', {
     domain: url_prefix
 });
 
-// //模块化支持
-// fis.hook('commonjs', {
-//     paths: {
-//         react : './node_modules/react/react.js',
-//         'react-dom' : './node_modules/react/index.js',
-//         jquery : 'common:node_modules/jquery/dist/jquery.js'
-//     },
-//     extList: ['.js', '.es', '.ts', '.tsx', '.jsx']
-// });
+
+/**
+ * 定制 grape release发布地址
+ */
+let projectDir = path.dirname(fis.project.getProjectPath());
+let distDir = projectDir + '/../dist/';
+fis.match('**', {
+    deploy: fis.plugin('local-deliver', {
+        to: fis.get('options.d') ||  fis.get('options.dest') || distDir
+    })
+});
 
 /**
  * 打包策略 :
- *     node_modules资源打包
  *     widget资源打包
  */
 fis.media('prod')
-    .match("/node_modules/**.{js,jsx}", {
-        packTo : '/${static}/pkg/${namespace}_nm.js'
-    })
     .match("/client/widget/**.{js,jsx,ts}", {
         packTo : '/${static}/pkg/${namespace}_wdg.js'
     })
