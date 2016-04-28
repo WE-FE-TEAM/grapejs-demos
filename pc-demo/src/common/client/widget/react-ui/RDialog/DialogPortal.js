@@ -41,14 +41,36 @@ class DialogPortal extends React.Component{
         }
     }
 
+    componentDidUpdate(){
+        if( this.props.isAutoCenter ){
+            this.autoCenter();
+        }
+    }
+
     autoCenter(){
 
         let $win = $(window);
 
         var clientWidth = $win.width();
         var clientHeight = $win.height();
-        var dialogWidth = $( this.refs.dialog ).width();
-        var dialogHeight = $( this.refs.dialog ).height();
+
+        var dialogWidth;
+        var dialogHeight;
+
+        let dialogStyle = this.props.dialog.style || {};
+
+        if( dialogStyle.width >= 0 ){
+            dialogWidth = dialogStyle.width;
+        }else{
+            dialogWidth = $( this.refs.dialog ).width();
+        }
+
+        if( dialogStyle.height > 0 ){
+            dialogHeight = dialogStyle.height;
+        }else{
+            dialogHeight = $( this.refs.dialog ).height();
+        }
+
 
         if( clientHeight !== this.state.clientHeight
             || clientWidth !== this.state.clientWidth
@@ -56,8 +78,8 @@ class DialogPortal extends React.Component{
             || dialogHeight !== this.state.dialogHeight
         ){
             //需要重新设置对话框的居中
-            let left = $win.scrollLeft() + ( clientWidth - dialogWidth ) / 2;
-            let top = $win.scrollTop() + ( clientHeight - dialogHeight ) / 2;
+            let left = Math.max( 0, $win.scrollLeft() + ( clientWidth - dialogWidth ) / 2 );
+            let top = Math.max( 20, $win.scrollTop() + ( clientHeight - dialogHeight ) / 2);
 
             this.setState({
                 clientWidth : clientWidth,
@@ -107,10 +129,18 @@ class DialogPortal extends React.Component{
         }
 
         let dialogProps = props.dialog || {};
-        let dialogStyle = dialogProps.style || {};
+        let dialogStyle = $.extend( {}, dialogProps.style || {} );
         if( ! dialogStyle.hasOwnProperty('zIndex') && zIndex ){
             dialogStyle['zIndex'] = zIndex + 1;
         }
+
+        if( this.props.isAutoCenter ){
+            dialogStyle.width = this.state.dialogWidth;
+            dialogStyle.height = this.state.dialogHeight;
+            dialogStyle.left = this.state.dialogLeft;
+            dialogStyle.top = this.state.dialogTop;
+        }
+
         dialogProps.style = dialogStyle;
         dialogProps.className = ( dialogProps.className || '') + ' r-dialog-wrap ';
 
