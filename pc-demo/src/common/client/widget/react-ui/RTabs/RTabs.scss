@@ -1,0 +1,39 @@
+.rui-tab{
+
+    $nav-item-height: 50px;
+
+    .tab-nav{
+        background: #f7f7f7;
+        font-size: 16px;
+        color: #2b2b2b;
+
+        .tab-nav-item{
+            float: left;
+            height: $nav-item-height;
+            line-height: $nav-item-height;
+            border-top: 4px solid transparent;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover{
+                border-top-color: #3a84cf;
+            }
+        }
+
+        .tab-nav-item-selected{
+            border-top-color: #3a84cf;
+            background: #fff;
+        }
+    }
+
+    .tab-panel{
+
+        .tab-panel-item{
+            display: none;
+        }
+
+        .tab-panel-item-selected{
+            display: block;
+        }
+    }
+}
