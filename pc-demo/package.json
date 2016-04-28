@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bluebird": "^3.3.5",
-    "grapejs": "^0.0.14"
+    "grapejs": "0.0.15"
   },
   "devDependencies": {
     "scripty": "^1.4.0"
