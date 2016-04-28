@@ -7,7 +7,7 @@
 
 let path = require('path');
 
-fis.set('namespace', 'home');
+fis.set('namespace', 'demo');
 
 
 /**

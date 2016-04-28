@@ -18,7 +18,7 @@ class UserSetting extends weDemo.ControllerBase {
     }
 
     indexAction(){
-        this.http.res.render('home/page/index.tpl');
+        this.http.res.render('demo/page/index.tpl');
     }
 }
 

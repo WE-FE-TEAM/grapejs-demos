@@ -9,9 +9,9 @@
 
 class DemoController extends weDemo.ControllerBase {
     
-    tabAction(){
-        // console.log('demo/dialog/dialog1');
-        this.http.render('home/page/demo/tab/tab.tpl');
+    dialog1Action(){
+        console.log('demo/dialog/dialog1');
+        this.http.render('demo/page/demo/dialog/dialog.tpl');
     }
 }
 

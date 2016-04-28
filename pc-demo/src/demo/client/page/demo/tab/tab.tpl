@@ -11,7 +11,7 @@
 
 
 {% script %}
-require(["home:page/demo/tab/tab.js"] , function(app){
+require(["demo:page/demo/tab/tab.js"] , function(app){
 app.init();
 });
 {% endscript %}

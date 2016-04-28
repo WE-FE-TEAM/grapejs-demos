@@ -8,6 +8,6 @@
 module.exports = {
 
     redis : {
-        host : 'from home/config/env/development'
+        host : 'from demo/config/env/development'
     }
 };

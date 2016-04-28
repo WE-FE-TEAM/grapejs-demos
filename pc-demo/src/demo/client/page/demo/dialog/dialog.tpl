@@ -11,7 +11,7 @@
 
 
 {% script %}
-require(["home:page/demo/dialog/dialog.js"] , function(app){
+require(["demo:page/demo/dialog/dialog.js"] , function(app){
 app.init();
 });
 {% endscript %}

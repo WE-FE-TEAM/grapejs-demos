@@ -1,5 +1,5 @@
 /**
- * home模块下的policy配置
+ * demo模块下的policy配置
  * Created by jess on 16/4/21.
  */
 

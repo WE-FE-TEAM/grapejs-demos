@@ -2,6 +2,6 @@
 
 {% block content %}
      <div id="pages-container">
-        {% widget "home:widget/message/message.tpl"%}
+        {% widget "demo:widget/message/message.tpl"%}
      </div>
 {% endblock %}
